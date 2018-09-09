@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "a6d20156-315d-4d9e-a815-a663d628759b",
+		"name": "SpringBoot_rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/workers/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:9090/workers/2",
+				"description": "http://localhost:9090/workers/2"
+			},
+			"response": []
+		},
+		{
+			"name": "/workers(更新)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"id\":2, \n    \"age\": 246\n\t\n\t\n\t\n}"
+				},
+				"url": "http://localhost:9090/workers",
+				"description": "http://localhost:9090/workers"
+			},
+			"response": []
+		},
+		{
+			"name": "/workers/{id}-(新增/修改)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \t\"name\": \"张三\",\n                \"age\": 20,\n                \"address\": \"湖南\"}"
+				},
+				"url": "http://localhost:9090/workers/1",
+				"description": "http://localhost:9090/workers/2\n全表修改"
+			},
+			"response": []
+		},
+		{
+			"name": "/workers/{id}-(删除)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:9090/workers/1",
+				"description": "http://localhost:9090/workers/2\n删除"
+			},
+			"response": []
+		},
+		{
+			"name": "/workers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "http://localhost:9090/workers",
+				"description": "http://localhost:9090/workers"
+			},
+			"response": []
+		},
+		{
+			"name": "/workers(分页查询+排序)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/workers?page=1&size=2&sort=age,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"workers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "age,desc"
+						}
+					]
+				},
+				"description": "http://localhost:9090/workers"
+			},
+			"response": []
+		},
+		{
+			"name": "/works(自定义查询)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/workers/search/nameStartsWith?name=李",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"workers",
+						"search",
+						"nameStartsWith"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "李"
+						}
+					]
+				},
+				"description": "http://localhost:9090/workers/search/nameStartsWith?name=李"
+			},
+			"response": []
+		},
+		{
+			"name": "/works(排序)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:9090/workers?sort=age,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"workers"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "age,desc"
+						}
+					]
+				},
+				"description": "http://localhost:9090/workers?sort=age,desc"
+			},
+			"response": []
+		}
+	]
+}
